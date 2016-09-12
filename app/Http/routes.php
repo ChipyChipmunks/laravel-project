@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('shop', 'ShopController@index');
 Route::get('shop/AddProduct', 'ShopController@add');
+Route::post('submit-product', 'ShopController@submit');
 
 Route::get('contact', 'ContactController@index');
 
