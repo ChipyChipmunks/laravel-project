@@ -18,8 +18,10 @@ class ShopController extends Controller
 
     public function submit(Request $request){
     	$this->validate($request, [
-    		'product_tittle' => 'required|min:1|max:255',
+    		'product_title' => 'required|min:1|max:255',
     		'product_description' => 'required|min:10',
+            'product_price' => 'required|min:1',
+            'product_image' => 'required|min:1',
     	]);
     }
 }
