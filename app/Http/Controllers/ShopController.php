@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Products;
 
 class ShopController extends Controller
 {
@@ -20,8 +21,16 @@ class ShopController extends Controller
     	$this->validate($request, [
     		'product_title' => 'required|min:1|max:255',
     		'product_description' => 'required|min:10',
-            'product_price' => 'required|min:1',
-            'product_image' => 'required|min:1',
+            'product_price' => 'required|numeric',
+            'product_image' => 'required|image',
+
     	]);
+
+        $newProduct = new Products();
+        $newProduct->title = $request->product_title;
+        $newProduct->description = $request->description;
+        $newProduct->price = $request->product_price;
+
+        $newProduct->save();
     }
 }
