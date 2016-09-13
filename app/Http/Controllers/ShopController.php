@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Intervention\Image\ImageManager;
 use App\Products;
 
 class ShopController extends Controller
